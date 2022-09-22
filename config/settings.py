@@ -14,8 +14,8 @@ from pathlib import Path
 from environs import Env
 
 # For environments variables uncomment codes below
-# env = Env()
-# env.read_env()
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,18 +26,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # to activate DJANGO_SECRET_KEY comment code below.
-SECRET_KEY = 'DJANGO_SECRET_KEY=django-insecure-e6+#8!$25)b3@s-(!25#2s$+^s(by4i)ud5)d85a2=kd64c=kn'
+# SECRET_KEY = 'DJANGO_SECRET_KEY=django-insecure-e6+#8!$25)b3@s-(!25#2s$+^s(by4i)ud5)d85a2=kd64c=kn'
 # to activate DJANGO_SECRET_KEY uncomment code below and cut above KEY to docker-compose.yml file.
-# SECRET_KEY = env("DJANGO_SECRET_KEY")
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 # to activate DEBUG uncomment code below and comment code above.
-# DEBUG = env.bool("DJANGO_DEBUG")
+DEBUG = env.bool("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # to activate ALLOWED_HOSTS uncomment code below and comment code above.
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
 
 # Application definition
