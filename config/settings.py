@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
     # Local APPs
     'accounts',
+    'quiz',
 ]
 
 SITE_ID = 1
