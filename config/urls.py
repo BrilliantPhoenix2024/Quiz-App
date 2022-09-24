@@ -21,4 +21,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     # Rosetta (i18n)
     path('rosetta/', include('rosetta.urls')),
+    path('quiz/', include('quiz.urls', namespace='quiz')),
 ]
