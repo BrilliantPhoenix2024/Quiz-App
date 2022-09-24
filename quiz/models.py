@@ -26,7 +26,7 @@ class Quizzes(models.Model):
 class Updated(models.Model):
     datetime_updated = models.DateTimeField(verbose_name=_('Last Updated'), auto_now=True)
 
-    class Mete:
+    class Meta:
         abstract = True
 
 
@@ -51,9 +51,9 @@ class Question(Updated):
     quiz = models.ForeignKey(Quizzes, related_name='question', on_delete=models.DO_NOTHING)
     technique = models.IntegerField(choices=TYPE, default=0, verbose_name=_('Type of Questions'))
     title = models.CharField(max_length=255, verbose_name=_('Title'))
-    difficulty = models.IntegerField(choices=SCALE, default=0, verbose_name='Difficulty')
-    datetime_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
-    is_valid = models.BooleanField(default=False, verbose_name='Active Status')
+    difficulty = models.IntegerField(choices=SCALE, default=0, verbose_name=_('Difficulty'))
+    datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Date Created'))
+    is_valid = models.BooleanField(default=False, verbose_name=_('Active Status'))
 
     def __str__(self):
         return self.title
@@ -66,5 +66,6 @@ class Answer(Updated):
         ordering = ['id']
 
     question = models.ForeignKey(Question, related_name='answer', on_delete=models.DO_NOTHING)
-    answer_text = models.CharField(max_length=255, verbose_name='Answer Text')
+    answer_text = models.CharField(max_length=255, verbose_name=_('Answer Text'))
     is_right = models.BooleanField(default=False)
+
