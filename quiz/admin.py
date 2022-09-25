@@ -25,6 +25,6 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInlineModel, ]
 
 
-# @admin.register(models.Answer)
-# class AnswerAdmin(admin.ModelAdmin):
-#     list_display = ['answer_text', 'is_right', 'question']
+@admin.register(models.Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    list_display = ['answer_text', 'is_right', 'question']
