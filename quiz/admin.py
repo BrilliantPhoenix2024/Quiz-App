@@ -18,13 +18,13 @@ class AnswerInlineModel(admin.TabularInline):
     fields = ['answer_text', 'is_right']
 
 
-# @admin.register(models.Question)
-# class QuestionAdmin(admin.ModelAdmin):
-#     fields = ['title', 'quiz']
-#     list_display = ['title', 'quiz', 'datetime_updated']
-#     inlines = [AnswerInlineModel, ]
-#
-#
+@admin.register(models.Question)
+class QuestionAdmin(admin.ModelAdmin):
+    fields = ['title', 'quiz']
+    list_display = ['title', 'quiz', 'datetime_updated']
+    inlines = [AnswerInlineModel, ]
+
+
 # @admin.register(models.Answer)
 # class AnswerAdmin(admin.ModelAdmin):
 #     list_display = ['answer_text', 'is_right', 'question']
